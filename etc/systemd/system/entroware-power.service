@@ -1,0 +1,15 @@
+[Unit]
+Description=Entroware Power Services
+After=dkms.service
+Conflicts=nvidia-fallback.service
+OnFailure=nvidia-fallback.service
+#Before=shutdown.target reboot.target
+
+[Service]
+Type=oneshot
+#RemainAfterExit=true
+ExecStart=/usr/lib/entroware-power/gpu_power_switch.sh remove
+#ExecStop=/usr/lib/entroware-power/gpu_power_switch.sh on
+
+[Install]
+WantedBy=display-manager.service

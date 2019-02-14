@@ -1,0 +1,9 @@
+[Unit]
+Description=Entroware Daemon
+
+[Service]
+Type=forking
+ExecStart=/usr/lib/entroware-daemon/entroware-daemon
+
+[Install]
+WantedBy=multi-user.target
